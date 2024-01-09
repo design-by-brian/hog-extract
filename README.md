@@ -1,0 +1,1 @@
+## House Number Extraction using Histogram of Oriented Gradients (HOG)
