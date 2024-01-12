@@ -2,3 +2,9 @@
 /test.tar.gz
 /train
 /train.tar.gz
+InterrogateData.ipynb
+PipelineTesting.ipynb
+knn_hog.npz
+HOGPixelIntensity_TRAIN_DATA.pkl
+data/train_32x32.mat
+data/test_32x32.mat

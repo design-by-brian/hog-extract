@@ -46,7 +46,6 @@ for image in train_images[0:1000,:,:,:]: # first 1000 images
 	
 train_desc = np.delete(train_desc, 0, 0) # remove the empty dummy
 train_desc = np.float32(train_desc) # convert to float 32
-print(train_desc.shape)
 
 train_data = {'train_desc':train_desc, 'train_labels':train_labels}
 
