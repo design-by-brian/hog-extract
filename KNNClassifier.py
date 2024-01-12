@@ -5,13 +5,13 @@ import numpy as np
 # Initiate kNN, train it on the training data
 knn = cv.ml.KNearest_create()
 
-with open('TRAIN_DATA_10000.pkl', 'rb') as f:
+with open('data/TRAIN_DATA_1000.pkl', 'rb') as f:
     train_pkl = pickle.load(f)
     train_desc = train_pkl['desc'] 
     train_labels = train_pkl['labels']
     knn.train(train_desc, cv.ml.ROW_SAMPLE, train_labels)
 
-with open('TEST_DATA_10000.pkl', 'rb') as f:
+with open('data/TEST_DATA_1000.pkl', 'rb') as f:
     test_pkl = pickle.load(f)
     test_desc = test_pkl['desc'] 
     test_labels = test_pkl['labels']
