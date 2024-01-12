@@ -8,3 +8,8 @@ knn_hog.npz
 HOGPixelIntensity_TRAIN_DATA.pkl
 data/train_32x32.mat
 data/test_32x32.mat
+.vscode/settings.json
+data/TEST_DATA_1000.pkl
+data/TEST_DATA_10000.pkl
+data/TRAIN_DATA_1000.pkl
+data/TRAIN_DATA_10000.pkl

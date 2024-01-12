@@ -78,8 +78,8 @@ def areaExtract(img):
     copy = resized.copy()
     preProcessedImg = preProcessing(resized)
     edges = cv.Canny(preProcessedImg, 400, 450) # find edges in the image
-    im2, contours, hierarchy = cv.findContours(edges, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE) # find contours from the edge image
-    contours.sort(reverse=True, key=lambda x: cv.contourArea(x, True)) # sort the contours by the area, descending
+    contours, hierarchy = cv.findContours(edges, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE) # find contours from the edge image
+    contours = sorted(contours, key=lambda x: cv.contourArea(x, True), reverse=True) # sort the contours by the area, descending
 
     digitContours = []
     y_values = []
@@ -129,7 +129,7 @@ def areaExtract(img):
 # Purpose: Aim is to find a building numbers in a the given cropped area.
 def digitExtract(croppedThreshold, croppedAreaBGR):
     croppedAreaEdges = cv.Canny(croppedThreshold, 400, 450) # get edges on the cropped threshold area
-    im2, contours, hierarchy = cv.findContours(croppedAreaEdges, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE) # find contours
+    contours, hierarchy = cv.findContours(croppedAreaEdges, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE) # find contours
 	# should only be digit contours. Get external so avoid inner zeroes or fours.
 
     digitInfo = []
